@@ -55,7 +55,7 @@ def process_data(train_dir, test_dir, valid_dir):
     #return train_data, test_data, valid_data
     return train_loader, test_loader, valid_loader, train_data
     
-    
+
   
 def basic_model(arch):
 # Load pretrained_network
@@ -154,6 +154,7 @@ def save_checkpoint(model, train_data, save_dir):
                   'classifier': model.classifier,
                   'state_dic': model.state_dict(),
                   'class_to_idx': model.class_to_idx,
+                  'hidden_units': model.hidden_units,
                  }
     return torch.save(checkpoint, 'checkpoint.pth')
 def main():
